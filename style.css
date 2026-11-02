@@ -1,0 +1,751 @@
+/* =========================================
+
+1. RESET AND BASE STYLES
+   ========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: "Segoe UI", Arial, sans-serif;
+background: var(--bg);
+color: var(--text);
+line-height: 1.7;
+overflow-x: hidden;
+transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
+button,
+input,
+textarea {
+font: inherit;
+}
+
+/* =========================================
+2. CSS VARIABLES - DARK THEME
+========================================= */
+
+:root {
+--bg: #080817;
+--bg-secondary: #101126;
+--bg-card: #15152d;
+
+
+--text: #ffffff;
+--text-light: #c5c5d8;
+--text-muted: #8888a5;
+
+--purple: #9b5cff;
+--cyan: #53e5ff;
+
+--border: rgba(255, 255, 255, 0.1);
+
+--gradient: linear-gradient(
+    135deg,
+    #9b5cff,
+    #53e5ff
+);
+
+--shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+--container-width: 1200px;
+
+
+}
+
+/* =========================================
+3. LIGHT THEME
+========================================= */
+
+body.light-theme {
+--bg: #f7f7ff;
+--bg-secondary: #eeeeff;
+--bg-card: #ffffff;
+
+
+--text: #17172b;
+--text-light: #45455f;
+--text-muted: #77778f;
+
+--border: rgba(20, 20, 50, 0.12);
+
+--shadow: 0 15px 40px rgba(50, 40, 100, 0.1);
+
+
+}
+
+/* =========================================
+4. COMMON CONTAINER
+========================================= */
+
+.container {
+width: min(90%, var(--container-width));
+margin-inline: auto;
+}
+
+/* =========================================
+5. HEADER AND NAVIGATION
+========================================= */
+
+header {
+width: 100%;
+padding: 18px 0;
+
+
+background: var(--bg);
+border-bottom: 1px solid var(--border);
+
+position: sticky;
+top: 0;
+z-index: 1000;
+
+backdrop-filter: blur(15px);
+
+
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 25px;
+}
+
+.logo {
+font-size: 26px;
+font-weight: 800;
+white-space: nowrap;
+}
+
+.logo span {
+color: var(--cyan);
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+gap: 28px;
+
+
+list-style: none;
+
+
+}
+
+.nav-links a {
+color: var(--text-light);
+font-size: 15px;
+font-weight: 500;
+
+
+transition: color 0.3s ease;
+
+
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+color: var(--cyan);
+}
+
+/* =========================================
+6. THEME TOGGLE BUTTON
+========================================= */
+
+.theme-toggle {
+border: 1px solid var(--border);
+background: var(--bg-card);
+color: var(--text);
+
+
+padding: 9px 14px;
+border-radius: 25px;
+
+cursor: pointer;
+transition: transform 0.3s ease;
+
+
+}
+
+.theme-toggle:hover {
+transform: translateY(-2px);
+}
+
+/* =========================================
+7. HERO SECTION
+========================================= */
+
+.hero {
+min-height: 85vh;
+
+
+display: flex;
+align-items: center;
+
+position: relative;
+isolation: isolate;
+
+background:
+    radial-gradient(
+        circle at 80% 25%,
+        rgba(155, 92, 255, 0.18),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 20% 80%,
+        rgba(83, 229, 255, 0.12),
+        transparent 35%
+    );
+
+
+}
+
+.hero-content {
+max-width: 800px;
+}
+
+.hero-subtitle {
+color: var(--cyan);
+
+
+font-size: 14px;
+font-weight: 700;
+
+letter-spacing: 3px;
+text-transform: uppercase;
+
+margin-bottom: 18px;
+
+
+}
+
+.hero h1 {
+font-size: clamp(38px, 7vw, 82px);
+line-height: 1.12;
+
+
+margin-bottom: 25px;
+letter-spacing: -2px;
+
+
+}
+
+.hero h1 span {
+background: var(--gradient);
+
+
+-webkit-background-clip: text;
+background-clip: text;
+
+color: transparent;
+
+
+}
+
+.hero p {
+max-width: 650px;
+
+
+color: var(--text-light);
+font-size: 18px;
+
+margin-bottom: 20px;
+
+
+}
+
+/* =========================================
+8. HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+
+
+margin-top: 30px;
+
+
+}
+
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+
+padding: 13px 27px;
+
+border-radius: 30px;
+font-weight: 700;
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+cursor: pointer;
+
+
+}
+
+.btn-primary {
+color: #080817;
+background: var(--gradient);
+
+
+border: none;
+
+
+}
+
+.btn-primary:hover {
+transform: translateY(-4px);
+box-shadow: 0 10px 30px rgba(155, 92, 255, 0.35);
+}
+
+.btn-ghost {
+color: var(--text);
+background: transparent;
+
+
+border: 1px solid var(--purple);
+
+
+}
+
+.btn-ghost:hover {
+background: var(--purple);
+color: white;
+
+
+transform: translateY(-4px);
+
+
+}
+
+/* =========================================
+9. COMMON SECTION STYLES
+========================================= */
+
+section {
+padding-block: 90px;
+}
+
+section:nth-of-type(even) {
+background: var(--bg-secondary);
+}
+
+.section-title {
+font-size: clamp(30px, 4vw, 45px);
+line-height: 1.2;
+
+
+margin-bottom: 15px;
+
+
+}
+
+.section-title span {
+color: var(--cyan);
+}
+
+.section-subtitle {
+color: var(--text-light);
+
+
+max-width: 650px;
+margin-bottom: 40px;
+
+
+}
+
+/* =========================================
+10. ABOUT SECTION - CSS GRID
+========================================= */
+
+.about-content {
+display: grid;
+
+
+grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+gap: 50px;
+align-items: center;
+
+
+}
+
+.about-text p {
+color: var(--text-light);
+margin-bottom: 20px;
+}
+
+.about-image {
+min-height: 350px;
+
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 25px;
+
+background: var(--gradient);
+box-shadow: var(--shadow);
+
+
+}
+
+.about-image span {
+font-size: 100px;
+}
+
+/* =========================================
+11. PROJECT CARDS - CSS GRID
+========================================= */
+
+.card-grid {
+display: grid;
+
+
+grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+gap: 30px;
+
+
+}
+
+.card {
+background: var(--bg-card);
+
+
+border: 1px solid var(--border);
+border-radius: 20px;
+
+overflow: hidden;
+
+box-shadow: var(--shadow);
+
+transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+
+}
+
+.card:hover {
+transform: translateY(-8px);
+border-color: var(--purple);
+}
+
+.card__bg {
+height: 220px;
+
+
+background: var(--gradient);
+
+position: relative;
+
+
+}
+
+.card__overlay {
+width: 100%;
+height: 100%;
+
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(8, 8, 23, 0.1),
+        rgba(8, 8, 23, 0.6)
+    );
+
+
+}
+
+.card__content {
+padding: 28px;
+}
+
+.tag {
+display: inline-block;
+
+
+color: var(--cyan);
+
+font-size: 12px;
+font-weight: 700;
+
+letter-spacing: 1.5px;
+text-transform: uppercase;
+
+margin-bottom: 12px;
+
+
+}
+
+.card__title {
+font-size: 22px;
+line-height: 1.4;
+
+
+margin-bottom: 12px;
+
+
+}
+
+.card__desc {
+color: var(--text-light);
+font-size: 15px;
+}
+
+/* =========================================
+12. CONTACT SECTION
+========================================= */
+
+.contact-content {
+max-width: 700px;
+margin-inline: auto;
+}
+
+.contact-content p {
+color: var(--text-light);
+margin-bottom: 30px;
+}
+
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.contact-form label {
+font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+width: 100%;
+
+
+padding: 15px;
+
+border-radius: 10px;
+
+background: var(--bg-card);
+color: var(--text);
+
+border: 1px solid var(--border);
+
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+border-color: var(--cyan);
+}
+
+.contact-form textarea {
+min-height: 150px;
+resize: vertical;
+}
+
+.contact-form button {
+align-self: flex-start;
+}
+
+/* =========================================
+13. FOOTER
+========================================= */
+
+footer {
+padding: 30px 0;
+
+
+text-align: center;
+
+background: var(--bg);
+border-top: 1px solid var(--border);
+
+
+}
+
+footer p {
+color: var(--text-muted);
+font-size: 14px;
+}
+
+/* =========================================
+14. ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+outline: 3px solid var(--cyan);
+outline-offset: 4px;
+}
+
+/* =========================================
+15. MOBILE-FIRST RESPONSIVE DESIGN
+========================================= */
+
+/* Small devices: mobile phones */
+
+@media (max-width: 600px) {
+
+
+.container {
+    width: 90%;
+}
+
+header {
+    padding: 15px 0;
+}
+
+nav {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hero {
+    min-height: 75vh;
+    padding-block: 70px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+.hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.btn {
+    padding: 12px 22px;
+}
+
+section {
+    padding-block: 60px;
+}
+
+.section-title {
+    font-size: 30px;
+}
+
+.about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.about-image {
+    min-height: 250px;
+}
+
+.card-grid {
+    grid-template-columns: 1fr;
+}
+
+.card__bg {
+    height: 180px;
+}
+
+.card__content {
+    padding: 22px;
+}
+
+
+}
+
+/* Medium devices: tablets */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+
+.hero {
+    min-height: 75vh;
+}
+
+.about-content {
+    grid-template-columns: 1fr;
+}
+
+.card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+section {
+    padding-block: 70px;
+}
+
+
+}
+
+/* Large devices: desktop */
+
+@media (min-width: 901px) {
+
+
+.hero {
+    min-height: 85vh;
+}
+
+.card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+}
+
+/* =========================================
+16. REDUCE MOTION FOR ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+*,
+*::before,
+*::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+}
+
+
+}

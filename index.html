@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Welcome to my creative portfolio. Explore my projects in web development, artificial intelligence, and creative design.">
+
+    <meta name="author" content="Your Name">
+
+    <title>Your Name | Creative Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+
+        <div class="container">
+
+            <nav aria-label="Main navigation">
+
+                <a href="index.html" class="logo" aria-label="Portfolio home">
+                    My<span>Portfolio.</span>
+                </a>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html" aria-current="page">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+                <button
+    class="theme-toggle"
+    id="themeToggle"
+    type="button"
+    aria-label="Switch to light theme"
+>
+    ☀️ Light Mode
+</button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <p class="hero-subtitle">
+                        Welcome to my creative universe
+                    </p>
+
+                    <h1 id="hero-heading">
+                        Hi, I'm <span>Parvathi SN</span>
+                    </h1>
+
+                    <p>
+                        A curious mind, a creative soul, and a technology
+                        enthusiast exploring the beautiful world of
+                        web development and artificial intelligence.
+                    </p>
+
+                    <p>
+                        I love turning ideas into meaningful digital
+                        experiences and building projects that combine
+                        creativity with technology.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="projects.html"
+                            class="btn btn-primary"
+                        >
+                            Explore My Projects
+                        </a>
+
+                        <a
+                            href="about.html"
+                            class="btn btn-ghost"
+                        >
+                            Discover My Story
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Featured Projects Section -->
+        <section aria-labelledby="featured-heading">
+
+            <div class="container">
+
+                <p class="hero-subtitle">
+                    A glimpse of my work
+                </p>
+
+                <h2 class="section-title" id="featured-heading">
+                    Featured <span>Projects</span>
+                </h2>
+
+                <p class="section-subtitle">
+                    Ideas brought to life through creativity,
+                    coding, and a little imagination.
+                </p>
+
+
+                <div class="card-grid">
+
+
+                    <!-- Kosha Project -->
+                    <article class="card">
+
+                        <div class="card__bg">
+                            <div class="card__overlay"></div>
+                        </div>
+
+                        <div class="card__content">
+
+                            <span class="tag">
+                                Web Development
+                            </span>
+
+                            <h3 class="card__title">
+                                Kosha — A Living Archive of India
+                            </h3>
+
+                            <p class="card__desc">
+                                A digital archive celebrating
+                                India's cultural heritage,
+                                traditions, and stories.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AI Music Project -->
+                    <article class="card">
+
+                        <div class="card__bg">
+                            <div class="card__overlay"></div>
+                        </div>
+
+                        <div class="card__content">
+
+                            <span class="tag">
+                                Artificial Intelligence
+                            </span>
+
+                            <h3 class="card__title">
+                                Emotion-Based Music Recommendation
+                            </h3>
+
+                            <p class="card__desc">
+                                An AI-powered application that
+                                detects facial emotions and
+                                recommends music based on mood.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- View All Projects Button -->
+                <div style="margin-top: 35px;">
+
+                    <a
+                        href="projects.html"
+                        class="btn btn-primary"
+                    >
+                        View All Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact Call-to-Action -->
+        <section aria-labelledby="cta-heading">
+
+            <div class="container">
+
+                <h2 class="section-title" id="cta-heading">
+                    Let's Create Something <span>Amazing</span>
+                </h2>
+
+                <p class="section-subtitle">
+                    Have an idea or want to collaborate?
+                    Let's connect and make it happen!
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="btn btn-primary"
+                >
+                    Contact Me
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 Parvathi SN.
+                Designed with creativity and passion.
+            </p>
+
+        </div>
+
+    </footer>
+    <script>
+    const themeToggle = document.getElementById("themeToggle");
+
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("light-theme");
+
+        if (document.body.classList.contains("light-theme")) {
+
+            themeToggle.textContent = "🌙 Dark Mode";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                "Switch to dark theme"
+            );
+
+        } else {
+
+            themeToggle.textContent = "☀️ Light Mode";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                "Switch to light theme"
+            );
+
+        }
+
+    });
+</script>
+
+</body>
+
+</html>
+```
