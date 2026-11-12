@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="A simple and beautiful task management application built using JavaScript.">
+
+    <title>TaskFlow | My To-Do List</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">✓</span>
+                <h1>TaskFlow</h1>
+            </div>
+
+            <p class="header-subtitle">
+                Organize your day, one task at a time.
+            </p>
+        </header>
+
+
+        <!-- Main Section -->
+        <main class="main-content">
+
+            <section class="welcome-section">
+
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                    <h2>My Tasks<span>.</span></h2>
+                    <p class="welcome-text">
+                        Stay focused. Get things done.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- Statistics -->
+            <section class="stats-container">
+
+                <div class="stat-card">
+                    <p>Total Tasks</p>
+                    <h3 id="total-count">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Completed</p>
+                    <h3 id="completed-count">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pending</p>
+                    <h3 id="pending-count">0</h3>
+                </div>
+
+            </section>
+
+
+            <!-- Add Task -->
+            <section class="task-input-section">
+
+                <form id="task-form">
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="What needs to be done today?"
+                        autocomplete="off"
+                        aria-label="Enter a new task"
+                        maxlength="150"
+                        required
+                    >
+
+                    <button type="submit" class="add-btn">
+                        + Add Task
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- Task Filters -->
+            <section class="filter-section">
+
+                <h3>My Task List</h3>
+
+                <div class="filter-buttons">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-filter="active">
+                        Active
+                    </button>
+
+                    <button class="filter-btn" data-filter="completed">
+                        Completed
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Task List -->
+            <section class="tasks-section">
+
+                <ul id="task-list" class="task-list">
+                    <!-- Tasks will be added dynamically using JavaScript -->
+                </ul>
+
+                <div id="empty-message" class="empty-message">
+                    <div class="empty-icon">✦</div>
+                    <h3>No tasks yet!</h3>
+                    <p>Add your first task and start being productive.</p>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ♥ | TaskFlow © 2026</p>
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
